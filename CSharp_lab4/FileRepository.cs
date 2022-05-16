@@ -15,14 +15,16 @@ namespace CSharp_lab4
         public FileRepository()
         {
             if (!Directory.Exists(BaseFolder))
+            {
                 Directory.CreateDirectory(BaseFolder);
+            }          
         }
 
         public void AddUserOrUpdate(Person user)
         {
             var stringObj = JsonSerializer.Serialize(user);
 
-            using (StreamWriter sw = new StreamWriter(Path.Combine(BaseFile, user.EmailAdress), false))
+            using (StreamWriter sw = new StreamWriter(Path.Combine(BaseFolder, user.EmailAdress), false))
             {
                 sw.WriteAsync(stringObj);
             }

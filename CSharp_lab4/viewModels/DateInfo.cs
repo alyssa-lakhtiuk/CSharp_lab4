@@ -229,16 +229,6 @@ namespace CSharp_lab4
         }
         
 
-        //private void proc()
-        //{
-        //    try
-        //    {
-        //        if (_person != null)
-        //        {
-        //            StationManager.DataStorage.EditUser(_person, new Person(FirstName, LastName, EmailAdress))
-        //        }
-        //    }
-        //}
         private bool CanExecute()
         {
             return !String.IsNullOrWhiteSpace(_person.FirstName) && !String.IsNullOrWhiteSpace(_person.LastName);

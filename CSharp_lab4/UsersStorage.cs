@@ -25,7 +25,7 @@ namespace CSharp_lab4
         {
             try
             {
-                _users = JsonSerializer.Deserialize <ObservableCollection< Person >> (FileRepository.BaseFile);
+                _users = JsonSerializer.Deserialize <ObservableCollection< Person >> (FileRepository.BaseFolder);
             } catch (Exception)
             {
                 _users = new ObservableCollection<Person>();

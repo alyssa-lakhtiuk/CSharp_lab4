@@ -156,7 +156,7 @@ namespace CSharp_lab4.viewModels
 
         private void SaveUser(object obj)
         {
-            StationManager.DataStorage.SaveAsync(); 
+            StationManager.DataStorage.Save(); 
         }
 
         private void DeleteUser(object obj)

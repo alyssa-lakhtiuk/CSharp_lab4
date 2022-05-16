@@ -32,12 +32,6 @@ namespace CSharp_lab4
             }
         }
 
-        //public DateInputUserControl(Person user){
-        //    InitializeComponent();
-        //    dateFromUser = new DateInfo();
-        //    DataContext = dateFromUser;
-        //}
-
         private void calendar_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
         {
             DateTime? selectedDate = DatePicker1.SelectedDate;

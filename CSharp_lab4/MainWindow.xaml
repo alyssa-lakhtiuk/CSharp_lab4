@@ -14,28 +14,26 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Button Name="AddUser" Content="Add user" HorizontalAlignment="Left" Margin="10, 0, 10, 0" Grid.Row="0" Height="25" Width="60" Command="{Binding AddUser}"/>
-        <Button Name="EditUser" Content="Edit user" HorizontalAlignment="Left" Margin="80, 0, 10, 0" Grid.Row="0" Height="25" Width="60" Command="{Binding EditUser}"/>
-        <Button Name="DeleteUser" Content="Delete user" HorizontalAlignment="Left" Margin="150, 0, 10, 0" Grid.Row="0" Height="25" Width="60" Command="{Binding DeleteUser}"/>
-        <Button Name="Save" Content="Save" HorizontalAlignment="Left" Margin="220, 0, 10, 0" Grid.Row="0" Height="25" Width="50" Command="{Binding SaveUser}"/>
+        <Button Name="AddUser" Content="Add user" HorizontalAlignment="Left" Margin="10, 0, 10, 0" Grid.Row="0" Height="25" Width="60" Command="{Binding Add}"/>
+        <Button Name="EditUser" Content="Edit user" HorizontalAlignment="Left" Margin="80, 0, 10, 0" Grid.Row="0" Height="25" Width="60" Command="{Binding Edit}"/>
+        <Button Name="DeleteUser" Content="Delete user" HorizontalAlignment="Left" Margin="150, 0, 10, 0" Grid.Row="0" Height="25" Width="60" Command="{Binding Delete}"/>
+        <Button Name="Save" Content="Save" HorizontalAlignment="Left" Margin="220, 0, 10, 0" Grid.Row="0" Height="25" Width="50" Command="{Binding Save}"/>
         <Menu Grid.Row="1">
             <MenuItem Header="Sort users">
-                <MenuItem Header="Sort By Name" Command="{Binding SortFirstName}"></MenuItem>
-                <MenuItem Header="Sort By Surname" Command="{Binding SortLastName}"></MenuItem>
-                <MenuItem Header="Sort By Birthday" Command="{Binding SortBirthday}"></MenuItem>
-                <MenuItem Header="Sort By Email" Command="{Binding SortEmail}"></MenuItem>
-                <MenuItem Header="Sort By Western Zodiac" Command="{Binding SortWestern}"></MenuItem>
-                <MenuItem Header="Sort By Chinese Zodiac" Command="{Binding SortChinese}"></MenuItem>
-                <MenuItem Header="Sort By Adulty" Command="{Binding SortIsAdult}"></MenuItem>
+                <MenuItem Header="Sort By first name" Command="{Binding SortByFirstName}"></MenuItem>
+                <MenuItem Header="Sort By last name" Command="{Binding SortByLastName}"></MenuItem>
+                <MenuItem Header="Sort By birthday date" Command="{Binding SortBirthday}"></MenuItem>
+                <MenuItem Header="Sort By email adress" Command="{Binding SortByEmailAdress}"></MenuItem>
+                <MenuItem Header="Sort By western zodiac" Command="{Binding SortBySunSign}"></MenuItem>
+                <MenuItem Header="Sort By chinese zodiac" Command="{Binding SortByChinesseSign}"></MenuItem>
             </MenuItem>
         </Menu>
-        <!--<local:DateInputUserControl></local:DateInputUserControl>-->
-        <DataGrid Grid.Row="2" ItemsSource="{Binding People, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" SelectedValue="{Binding ChosenPerson,UpdateSourceTrigger=PropertyChanged}" ScrollViewer.CanContentScroll="True">
+        <DataGrid Grid.Row="2" ItemsSource="{Binding Users, Mode=OneWay,UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" SelectedValue="{Binding ChosenPerson,UpdateSourceTrigger=PropertyChanged}" ScrollViewer.CanContentScroll="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="First name" Binding="{Binding FirstName, Mode=OneWay}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Last name" Binding="{Binding LastName, Mode=OneWay}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Birthday date" Binding="{Binding selectedDateFromUser, Mode=OneWay, StringFormat=dd/MM/yyyy}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Email" Binding="{Binding Email, Mode=OneWay}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Birthday date" Binding="{Binding SelectedDateFromUser, Mode=OneWay, StringFormat=dd/MM/yyyy}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Email" Binding="{Binding EmailAdress, Mode=OneWay}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Western Zodiac" Binding="{Binding SunSign, Mode=OneWay}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Chinese Zodiac" Binding="{Binding ChineseSign, Mode=OneWay}"></DataGridTextColumn>
             </DataGrid.Columns>

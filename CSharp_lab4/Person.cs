@@ -94,10 +94,6 @@ namespace CSharp_lab4
             }
         }
 
-        //public Person()
-        //{
-
-        //}
 
         public Person(string firstName, string lastName, string emailAdress, DateTime dateBirth)
         {
